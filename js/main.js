@@ -66,6 +66,7 @@ function initHeader() {
   const header = document.getElementById('site-header');
   const menuToggle = document.getElementById('menu-toggle');
   const mainNav = document.getElementById('main-nav');
+  const navBackdrop = document.getElementById('nav-backdrop');
   
   if (!header) return;
   
@@ -85,28 +86,55 @@ function initHeader() {
     lastScrollY = currentScrollY;
   });
   
+  // Helper function to close mobile menu
+  function closeMobileMenu() {
+    mainNav.classList.remove('header__nav--open');
+    menuToggle.classList.remove('active');
+    if (navBackdrop) {
+      navBackdrop.classList.remove('mobile-nav-backdrop--visible');
+    }
+    document.body.style.overflow = '';
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+  
+  // Helper function to open mobile menu
+  function openMobileMenu() {
+    mainNav.classList.add('header__nav--open');
+    menuToggle.classList.add('active');
+    if (navBackdrop) {
+      navBackdrop.classList.add('mobile-nav-backdrop--visible');
+    }
+    document.body.style.overflow = 'hidden';
+    menuToggle.setAttribute('aria-expanded', 'true');
+  }
+  
   // Mobile menu toggle
   if (menuToggle && mainNav) {
     menuToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('header__nav--open');
-      menuToggle.classList.toggle('active');
-      
-      // Toggle aria-expanded
       const isOpen = mainNav.classList.contains('header__nav--open');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-      
-      // Prevent body scroll when menu is open
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
     });
+    
+    // Close menu when clicking backdrop
+    if (navBackdrop) {
+      navBackdrop.addEventListener('click', closeMobileMenu);
+    }
     
     // Close menu when clicking nav links
     const navLinks = mainNav.querySelectorAll('.nav__link');
     navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('header__nav--open');
-        menuToggle.classList.remove('active');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', closeMobileMenu);
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mainNav.classList.contains('header__nav--open')) {
+        closeMobileMenu();
+      }
     });
   }
 }
