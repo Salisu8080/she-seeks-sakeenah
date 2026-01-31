@@ -1,0 +1,351 @@
+/* ============================================
+   SHE SEEKS SAKEENAH - LAYOUT CSS
+   Containers, Grid Systems, Sections
+   ============================================ */
+
+/* ---------- Container ---------- */
+.container {
+    width: 100%;
+    max-width: var(--container-xl);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+}
+
+.container--sm {
+    max-width: var(--container-sm);
+}
+
+.container--md {
+    max-width: var(--container-md);
+}
+
+.container--lg {
+    max-width: var(--container-lg);
+}
+
+.container--2xl {
+    max-width: var(--container-2xl);
+}
+
+.container--full {
+    max-width: 100%;
+}
+
+/* ---------- Sections ---------- */
+.section {
+    padding-top: var(--space-4xl);
+    padding-bottom: var(--space-4xl);
+}
+
+.section--sm {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+}
+
+.section--lg {
+    padding-top: var(--space-5xl);
+    padding-bottom: var(--space-5xl);
+}
+
+.section--cream {
+    background-color: var(--color-cream);
+}
+
+.section--white {
+    background-color: var(--color-white);
+}
+
+.section--sand {
+    background-color: var(--color-sand);
+}
+
+.section--sage {
+    background-color: var(--color-sage);
+    color: var(--color-text-light);
+}
+
+.section--sage h1,
+.section--sage h2,
+.section--sage h3,
+.section--sage h4,
+.section--sage h5,
+.section--sage h6 {
+    color: var(--color-white);
+}
+
+.section--teal {
+    background-color: var(--color-teal);
+    color: var(--color-text-light);
+}
+
+.section--teal h1,
+.section--teal h2,
+.section--teal h3,
+.section--teal h4,
+.section--teal h5,
+.section--teal h6 {
+    color: var(--color-white);
+}
+
+/* ---------- Section Headers ---------- */
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--space-3xl);
+}
+
+.section-header__eyebrow {
+    display: inline-block;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-gold);
+    margin-bottom: var(--space-md);
+}
+
+.section-header__title {
+    margin-bottom: var(--space-lg);
+}
+
+.section-header__description {
+    color: var(--color-text-secondary);
+    font-size: var(--fs-md);
+}
+
+/* ---------- Grid System ---------- */
+.grid {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+.grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid--auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* Grid gap variations */
+.grid--gap-sm {
+    gap: var(--space-md);
+}
+
+.grid--gap-lg {
+    gap: var(--space-2xl);
+}
+
+.grid--gap-xl {
+    gap: var(--space-3xl);
+}
+
+/* ---------- Flexbox Utilities ---------- */
+.flex {
+    display: flex;
+}
+
+.flex--center {
+    align-items: center;
+    justify-content: center;
+}
+
+.flex--between {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex--start {
+    align-items: flex-start;
+}
+
+.flex--end {
+    align-items: flex-end;
+}
+
+.flex--column {
+    flex-direction: column;
+}
+
+.flex--wrap {
+    flex-wrap: wrap;
+}
+
+.flex--gap-sm {
+    gap: var(--space-sm);
+}
+
+.flex--gap-md {
+    gap: var(--space-md);
+}
+
+.flex--gap-lg {
+    gap: var(--space-lg);
+}
+
+.flex--gap-xl {
+    gap: var(--space-xl);
+}
+
+/* ---------- Two Column Layouts ---------- */
+.split {
+    display: grid;
+    gap: var(--space-3xl);
+    align-items: center;
+}
+
+.split--50-50 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.split--60-40 {
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.split--40-60 {
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.split--reverse {
+    direction: rtl;
+}
+
+.split--reverse>* {
+    direction: ltr;
+}
+
+/* ---------- Text Alignment ---------- */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* ---------- Spacing Utilities ---------- */
+.mt-0 {
+    margin-top: 0;
+}
+
+.mt-sm {
+    margin-top: var(--space-sm);
+}
+
+.mt-md {
+    margin-top: var(--space-md);
+}
+
+.mt-lg {
+    margin-top: var(--space-lg);
+}
+
+.mt-xl {
+    margin-top: var(--space-xl);
+}
+
+.mt-2xl {
+    margin-top: var(--space-2xl);
+}
+
+.mt-3xl {
+    margin-top: var(--space-3xl);
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-sm {
+    margin-bottom: var(--space-sm);
+}
+
+.mb-md {
+    margin-bottom: var(--space-md);
+}
+
+.mb-lg {
+    margin-bottom: var(--space-lg);
+}
+
+.mb-xl {
+    margin-bottom: var(--space-xl);
+}
+
+.mb-2xl {
+    margin-bottom: var(--space-2xl);
+}
+
+.mb-3xl {
+    margin-bottom: var(--space-3xl);
+}
+
+/* ---------- Main Content Area ---------- */
+.main-content {
+    min-height: calc(100vh - 200px);
+}
+
+/* ---------- Responsive Adjustments ---------- */
+@media (max-width: 1024px) {
+    .grid--4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .split--50-50,
+    .split--60-40,
+    .split--40-60 {
+        grid-template-columns: 1fr;
+    }
+
+    .split--reverse {
+        direction: ltr;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+
+    .section {
+        padding-top: var(--space-3xl);
+        padding-bottom: var(--space-3xl);
+    }
+
+    .grid--2,
+    .grid--3 {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        margin-bottom: var(--space-2xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding-top: var(--space-2xl);
+        padding-bottom: var(--space-2xl);
+    }
+}
